@@ -13,11 +13,6 @@ jobs:
         dotnet-version: 3.0.102
     - name: Build the solution
       run: dotnet build --configuration Release
-
-  publish:
-    runs-on: [windows-latest]
-    needs: [build]
-    steps:
     - name: Pack the game
       run: dotnet publish PirateGame --configuration Release --output publish_out
     - name: Upload artifact
